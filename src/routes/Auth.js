@@ -49,13 +49,15 @@ const Auth = () => {
     const {
       target: { name },
     } = event;
-    let provider;
     if (name === 'google') {
-      provider = new firebaseInstance.auth.GoogleAuthProvider();
+      await authService.signInWithPopup(
+        new firebaseInstance.auth.GoogleAuthProvider(),
+      );
     } else if (name === 'github') {
-      provider = new firebaseInstance.auth.GithubAuthProvider();
+      await authService.signInWithPopup(
+        new firebaseInstance.auth.GithubAuthProvider(),
+      );
     }
-    await authService.signInWithPopup(provider);
   };
 
   return (
