@@ -38,6 +38,7 @@ const Home = ({ userObj }) => {
     await dbService.collection('nweets').add(nweetObj);
 
     seteNweet('');
+    setAttachment();
   };
 
   const onChange = (event) => {
