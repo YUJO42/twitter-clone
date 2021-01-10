@@ -1,14 +1,14 @@
 import firebase from 'firebase/app';
 import 'firebase/auth';
-import { FIREBASE_CONFIG } from './config';
+import 'firebase/firestore';
 
 const firebaseConfig = {
-  apiKey: FIREBASE_CONFIG.API_KEY,
-  authDomain: FIREBASE_CONFIG.AUTH_DOMAIN,
-  projectId: FIREBASE_CONFIG.PROJECT_ID,
-  storageBucket: FIREBASE_CONFIG.STORAGE_BUCKET,
-  messagingSenderId: FIREBASE_CONFIG.MESSAGE_ID,
-  appId: FIREBASE_CONFIG.APP_ID,
+  apiKey: 'AIzaSyCW1tbmrqk-DBMu15h4ec5HPLwr441bbNE',
+  authDomain: 'twitter-clone-d875a.firebaseapp.com',
+  projectId: 'twitter-clone-d875a',
+  storageBucket: 'twitter-clone-d875a.appspot.com',
+  messagingSenderId: '68811103814',
+  appId: '1:68811103814:web:ab7b267b8c334200003447',
 };
 
 firebase.initializeApp(firebaseConfig);
@@ -16,3 +16,4 @@ firebase.initializeApp(firebaseConfig);
 export const firebaseInstance = firebase;
 
 export const authService = firebase.auth();
+export const dbService = firebase.firestore();
