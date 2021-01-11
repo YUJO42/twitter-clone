@@ -6,7 +6,7 @@ import Nweet from 'components/Nweet';
 const Home = ({ userObj }) => {
   const [nweet, seteNweet] = useState('');
   const [nweets, setNweets] = useState([]);
-  const [attachment, setAttachment] = useState();
+  const [attachment, setAttachment] = useState('');
 
   useEffect(() => {
     dbService.collection('nweets').onSnapshot((snapshot) => {
@@ -21,7 +21,7 @@ const Home = ({ userObj }) => {
   const onSubmit = async (event) => {
     event.preventDefault();
     let attachmentUrl = '';
-    if (attachment != '') {
+    if (attachment !== '') {
       const attachmentRef = storageService
         .ref()
         .child(`${userObj.uid}/${uuidv4()}`);
@@ -38,7 +38,7 @@ const Home = ({ userObj }) => {
     await dbService.collection('nweets').add(nweetObj);
 
     seteNweet('');
-    setAttachment();
+    setAttachment('');
   };
 
   const onChange = (event) => {
