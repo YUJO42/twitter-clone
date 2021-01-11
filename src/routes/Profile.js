@@ -47,7 +47,7 @@ const Profile = ({ refreshUser, userObj }) => {
           }}
         />
       </form>
-      <span className="formBtn cancelBtn logOut" onClick={onLogOutClick}>
+      <span className="formBtn cancelBtn logOut" onClick={onLogoutClick}>
         Log Out
       </span>
     </div>
