@@ -72,15 +72,6 @@ const NweetFactory = ({ userObj }) => {
           placeholder="What's on your mind?"
           maxLength={120}
         />
-        <input
-          id="attach-file"
-          type="file"
-          accept="image/*"
-          onChange={onFileChange}
-          style={{
-            opacity: 0,
-          }}
-        />
         <input type="submit" value="&rarr;" className="factoryInput__arrow" />
       </div>
       <label for="attach-file" className="factoryInput__label">
@@ -88,11 +79,13 @@ const NweetFactory = ({ userObj }) => {
         <FontAwesomeIcon icon={faPlus} />
       </label>
       <input
-        value={nweet}
-        onChange={onChange}
-        type="text"
-        placeholder="What~s on your mind?"
-        maxLength={120}
+        id="attach-file"
+        type="file"
+        accept="image/*"
+        onChange={onFileChange}
+        style={{
+          opacity: 0,
+        }}
       />
       {attachment && (
         <div className="factoryForm__attachment">
