@@ -81,6 +81,7 @@ const NweetFactory = ({ userObj }) => {
             opacity: 0,
           }}
         />
+        <input type="submit" value="&rarr;" className="factoryInput__arrow" />
       </div>
       <label for="attach-file" className="factoryInput__label">
         <span>Add photos</span>
